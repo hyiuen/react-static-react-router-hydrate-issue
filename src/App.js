@@ -3,6 +3,9 @@ import { Root, Routes, addPrefetchExcludes } from 'react-static'
 //
 import { Switch, Route, Link } from 'react-router-dom'
 import Dynamic from 'containers/Dynamic'
+// if the page component is imported here, the issue on rehydrate doesn't happen anymore
+// uncomment the line below to see
+// import Home from "./pages/index"
 
 import './app.css'
 
@@ -26,6 +29,9 @@ function App() {
           </Switch>
         </React.Suspense>
       </div>
+
+      {/* Add bottom line to better see the reloadin issue */}
+      <div style={{ width: "100%", height: "4px", backgroundColor: "red"}} />
     </Root>
   )
 }
